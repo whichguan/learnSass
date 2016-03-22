@@ -1,0 +1,137 @@
+@charset "UTF-8";
+//圆角
+@mixin borderRadius($num){
+  -weibkit-border-radius:$num;
+  border-radius:$num;
+}
+@mixin borderRadius4($num1,$num2,$num3,$num4){
+  -weibkit-border-radius:$num1 $num2 $num3 $num4;
+  border-radius:$num1 $num2 $num3 $num4;
+}
+//盒子垂直水平居中
+@mixin boxCenter($pack:center, $align: center) {
+  display:-webkit-box;
+  -webkit-box-pack: $pack;
+  -webkit-box-align: $align;
+}
+//背景大小
+@mixin bgSize($width:auto,$height:auto){
+  background-size: $width $height;
+  -webkit-background-size: $width $height;
+}
+//伪元素
+@mixin content{
+  display: inline-block;
+  content: "";
+}
+//绝对定位
+@mixin abs($left:0,$top:0){
+  position: absolute;
+  left: $left;
+  top: $top;
+}
+@mixin absR($right:0,$top:0){
+  position: absolute;
+  right: $right;
+  top: $top;
+}
+
+@mixin absB($left:0,$bottom:0){
+  position: absolute;
+  left: $left;
+  bottom: $bottom;
+}
+
+
+@mixin fixed{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+//单行裁切
+@mixin textOverflow{
+  overflow:hidden;white-space:nowrap;text-overflow:ellipsis;
+}
+
+//一像素按钮
+@mixin btnBorder($tColorr,$bColor){
+  position: relative;
+  width: 54px;
+  height: 28px;
+  line-height: 30px;
+  color: $tColorr;
+  text-align:center;
+  @include borderRadius(4px);
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    bottom: -50%;
+    left: -50%;
+    right: -50%;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    border: 2px solid #{$bColor};
+    @include borderRadius(8px);
+  }
+}
+
+//一像素盒子
+@mixin onePxBox($bColor2:#EBEBEB){
+  content: '';
+  position: absolute;
+  top: -50%;
+  bottom: -50%;
+  left: -50%;
+  right: -50%;
+  -webkit-transform: scale(0.5);
+  transform: scale(0.5);
+  border: 1px solid #{$bColor2};
+}
+@mixin onePxBt($bColor3:#EBEBEB){
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-transform: scale(1,0.5);
+  transform: scale(1,0.5);
+  border-bottom: 1px solid #{$bColor3};
+}
+@mixin onePxRight($bColor3:#EBEBEB){
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  -webkit-transform: scale(0.5,1);
+  transform: scale(0.5,1);
+  border-right: 1px solid #{$bColor3};
+}
+@mixin onePxLeft($bColor3:#EBEBEB){
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-transform: scale(0.5,1);
+  transform: scale(0.5,1);
+  border-left: 1px solid #{$bColor3};
+}
+
+@mixin font($fSize,$lHeight,$color){
+  font-size: $fSize;
+  line-height:$lHeight;
+  color: $color;
+}
+//多行裁切
+@mixin textOverflowMore($fSize,$lHeight,$line){
+  font-size: $fSize;
+  line-height:$lHeight;
+  max-height:$line*$lHeight;
+  overflow:hidden;text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: $line; -webkit-box-orient: vertical;
+}

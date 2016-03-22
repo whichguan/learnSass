@@ -1,0 +1,17 @@
+.test1 { content: Hello Sass!; /*Hello Sass!*/ }
+
+.test2 { content: 'Hello Sass!; /*'Hello Sass!*/ }
+
+.test3 { content: I'm Web Designer; /*I'm Web Designer*/ }
+
+.test4 { content: 'Hello Sass!'; /*'Hello Sass!'*/ }
+
+.test5 { content: "Hello Sass!"; /*"Hello Sass!"*/ }
+
+.test6 { content: Hello Sass; /*Hello Sass!*/ }
+
+.test1 { content: "Hello Sass"; }
+
+.test { text: AAAAA; text: AA-AAAA-AAA; }
+
+.test { text: aaaaa; text: aa-aaaa-aaa; }

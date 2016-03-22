@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+//随机数
+.main{
+    width:random();
+}
+//找最大 找最小
+$a:1;
+$b:2;
+$c:3;
+.main{
+    width: max($a,$b,$c);
+    width: min($a,$b,$c);
+}
+//取绝对值
+$x:-10em;
+$y:15px;
+.abs{
+    width: abs($x);
+    height: abs($y);
+}
+//四舍五入取整数、取整进一法、取整退一法、无单位转百分比
+$o:3.49px;
+$p:4.5px;
+$q:2;
+.round{
+    width: round($o);
+    height: round($p);
+    font-size: ceil($o);
+    line-height:floor($o);
+    text-indent: percentage($q);
+    left: percentage(2px/10px);
+    top: ceil(20.1%);
+}
+//0到9的随机数
+.mycount{
+    width:floor(random()*10);
+}

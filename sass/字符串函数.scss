@@ -1,0 +1,42 @@
+@charset "UTF-8";
+//字符串函数
+
+//unquote( ) 函数只能删除字符串最前和最后的引号（双引号或单引号），而无法删除字符串中间的引号。如果字符没有带引号，返回的将是字符串本身。
+
+.test1 {
+    content:  unquote('Hello Sass!') ;
+    /*Hello Sass!*/
+}
+.test2 {
+    content: unquote("'Hello Sass!");
+    /*'Hello Sass!*/
+}
+.test3 {
+    content: unquote("I'm Web Designer");
+    /*I'm Web Designer*/
+}
+.test4 {
+    content: unquote("'Hello Sass!'");
+    /*'Hello Sass!'*/
+}
+.test5 {
+    content: unquote('"Hello Sass!"');
+    /*"Hello Sass!"*/
+}
+.test6 {
+    content: unquote(Hello Sass);
+    /*Hello Sass!*/
+}
+//quote 是双引号的函数，如果中间有空格，下划线，还必须要加双引号
+.test1 {
+    content:  quote("Hello Sass");
+}
+//字符串大小写转换
+.test {
+  text: to-upper-case(aaaaa);
+  text: to-upper-case(aA-aAAA-aaa);
+}
+.test {
+  text: to-lower-case(AAAAA);
+  text: to-lower-case(aA-aAAA-aaa);
+}

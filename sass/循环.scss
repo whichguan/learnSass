@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+@import "var";
+//按钮
+$btnList:zoom-in, zoom-out,reset;
+%btnDefault{
+    width:63px;
+    height:36px;
+//  @include bgUrl("qiang_button.png");
+//  @include bgSize(80px);
+    line-height: 900px;
+    overflow: hidden;
+}
+@for $i from 1 through length($btnList){
+.btn-#{nth($btnList,$i)} {
+    @extend %btnDefault;
+    background-position: 0px (-($i - 1)*40px);
+}
+}
+//图标
+$iconName: puma seag egret sala;
+%defaultIcon{
+    background-image: url('/images/animal.png');
+}
+@each $index in $iconName {
+    .icon-#{$index}{
+        @extend %defaultIcon;     
+        background-position:0 (index($iconName,$i)-1)*(-30px);
+    }
+}  
+//数字角标
+@for $i from 1 through 5{
+li:nth-child(#{$i}) .num{
+    background-position: (-($i - 1)*40px) -55px; 
+    }
+}
+
+
+.name{
+    width: 260px;
+    height: 30px;
+    margin: 0 10px;
+    @include font(16px,24px,#333);
+    @include textOverflow;
+}
+.info{
+    padding: 0 5px 0 8px;
+    height: 20px;
+    position: relative;
+    top: -5px;
+    @include textOverflow;
+    @include font(12px,14px,#333);
+    .time{
+        display: inline-block;
+        color: #D0D0D0;
+        padding-left: 5px;
+    }
+    .icon-gonghui{
+        position: relative;
+        top: 3px;
+        margin-right: 4px;
+    }
+}
